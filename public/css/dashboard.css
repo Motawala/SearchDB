@@ -1,0 +1,121 @@
+.nav-bar{
+    background-color:brown;
+    overflow: hidden;
+    height:auto;
+    text-align: right;
+    margin:auto;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body{
+    background-color:cornsilk;
+    margin:0;
+}
+
+
+
+.nav-bar-logo{
+    height:140px;
+    width:180px;
+}
+
+.heading{
+   text-align: center;
+   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+   color: rgb(134, 202, 241);
+}
+
+
+.search-container{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    width:100%;
+    height:auto fit-content;
+    margin-top: 5%;
+    flex-direction: column;
+}
+
+.firstname{
+    border-radius: 5px;
+    height: 50px;
+    width: auto;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    border: none;
+    background-color: black;
+    opacity: 0.8;
+    color:cornsilk;
+    margin-bottom: 10px;
+}
+
+.lastname{
+    border-radius: 5px;
+    height: 50px;
+    width: auto;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    border: none;
+    background-color: black;
+    opacity: 0.8;
+    color:cornsilk;
+    margin-bottom: 10px;
+}
+
+.firstname::-webkit-search-cancel-button{
+    cursor: pointer;
+}
+
+.lastname::-webkit-search-cancel-button:hover{
+    cursor: pointer;
+}
+
+
+
+.submit-button{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    width: 100%;
+    height:auto;
+    margin-top:5%;
+    flex-direction: column;
+}
+
+.submit-search{
+    width:15%;
+    height:40px;
+    border:2px black;
+    border-radius: 5px;
+    background-color: rgb(134, 202, 241);
+    font-weight: bold;
+    font-size: 25px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+
+
+.submit-search:hover{
+    background-color: darkgray;
+    cursor: pointer;
+}
+
+.add-guest{
+    width:15%;
+    height:40px;
+    border:2px black;
+    border-radius: 5px;
+    background-color: brown;
+    font-weight: bold;
+    font-size: 25px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.add-guest:hover{
+    background-color: darkgray;
+    cursor: pointer;
+}

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <title>DNR lookup</title>
+    <link rel = "stylesheet" href = "/css/dashboard.css">
+    <script src="https://cdn.auth0.com/js/auth0-spa-js/2.0/auth0-spa-js.production.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    
+    <div class="nav-bar">
+        <img src="/Images/daysinn.png" class="nav-bar-logo" id="nav-bar-logo">
+        <h1 class="heading" id="heading">DNR Check List</h1>
+    </div>
+    <div class="search-container" id="search-container">
+        <input class="firstname" id="firstname" placeholder="Firstname" type="search" required>
+        <input class="lastname" id="lastname" placeholder="Lastname"  type="search" required>
+    </div>
+    <div class="submit-button">
+        <input class="submit-search" id="submit-search" type="submit" value="Search">
+        <input class="add-guest" id="add-guest" type="submit" value="Add Guest">
+    </div>
+    <div class="message-display">
+        <p class="message" id="message"></p>
+    </div>
+    
+</body>
+</html>
