@@ -4,13 +4,15 @@ const guest = require('../models/guest')
 const lookup = async(req, res) =>{
     try{
         const {firstname, lastname} = req.body;
-
+       
 
         const exist = await guest.findOne({firstname});
         const existLastname = await guest.findOne({lastname});
 
-        if(exist || existLastname){
-            return res.send(firstname, lastname);
+        if(exist){
+            return res.status(200).json(exist)
+        }else if(existLastname){
+            return res.status(200).json(existLastname)
         }else{
             return res.status(400).json({
                 success:false,
@@ -20,7 +22,7 @@ const lookup = async(req, res) =>{
     }catch(error){
         return res.status(500).json({
             success:false,
-            message:"Error Finding the user",error
+            message:"Error Finding the user"
         })
     }
 }

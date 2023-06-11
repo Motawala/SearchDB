@@ -7,7 +7,7 @@ router.get('/dashboard', function(req,res){
 })
 
 router.post('/addGuest',addGuest);
-router.get('/lookup',lookup);
+router.post('/lookup',lookup);
 
 
 module.exports = router

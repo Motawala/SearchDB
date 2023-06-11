@@ -119,3 +119,9 @@ body{
     background-color: darkgray;
     cursor: pointer;
 }
+
+
+.message-display p{
+    align-items: center;
+    text-align: center;
+}
