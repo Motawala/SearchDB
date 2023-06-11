@@ -50,7 +50,7 @@ async function search(){
             const message = document.getElementById('message')
             if(data.firstname != undefined || data.lastname != undefined)
             {
-                message.textContent = "Guest Found " + data.firstname + " " + data.lastname
+                message.textContent = "Guest Found in the DNR Checklist " + data.firstname + " " + data.lastname
                 
             }else{
                 message.textContent = "Guest Not Found"
@@ -61,5 +61,37 @@ async function search(){
        
     }catch(error){
         console.log(error)
+    }
+}
+
+
+const addGuest = document.getElementById('add-guest');
+if(addGuest){
+    addGuest.addEventListener('click',add)
+}
+
+async function add(){
+
+    var firstname = document.getElementById('firstname').value;
+    var lastname = document.getElementById('lastname').value;
+
+    firstname = firstname.charAt(0).toUpperCase() + firstname.slice(1)
+    lastname = lastname.charAt(0).toUpperCase() + lastname.slice(1)
+
+
+    const response = await fetch("/addGuest",{
+        method: 'POST',
+        headers:{
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ firstname, lastname }),
+    })
+
+    if(response.ok){
+        const message = document.getElementById('message');
+        message.textContent = "Guest Added to the DNR Checklist"
+    }else{
+        const message = document.getElementById('message');
+        message.textContent = "Error Adding the Guest"
     }
 }

@@ -2,7 +2,7 @@ const express = (require('express'))
 const router = express.Router()
 const {lookup, addGuest} = require('../controllers/guestInfo')
 
-router.get('/dashboard', function(req,res){
+router.get('/', function(req,res){
     res.render('dashboard',{title:"Home Page"});
 })
 
