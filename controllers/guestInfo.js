@@ -3,7 +3,7 @@ const guest = require('../models/guest')
 
 const lookup = async(req, res) =>{
     try{
-        const {firstname, lastname} = req.body;
+        var {firstname, lastname} = req.body;
        
 
         const exist = await guest.findOne({firstname});

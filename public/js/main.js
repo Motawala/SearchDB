@@ -51,7 +51,7 @@ async function search(){
             if(data.firstname != undefined || data.lastname != undefined)
             {
                 message.textContent = "Guest Found in the DNR Checklist " + data.firstname + " " + data.lastname
-                
+                message.style.color = "brown"
             }else{
                 message.textContent = "Guest Not Found"
                 
@@ -74,9 +74,10 @@ async function add(){
 
     var firstname = document.getElementById('firstname').value;
     var lastname = document.getElementById('lastname').value;
-
-    firstname = firstname.charAt(0).toUpperCase() + firstname.slice(1)
-    lastname = lastname.charAt(0).toUpperCase() + lastname.slice(1)
+    var firstslice = firstname.slice(1)
+    var lastslice = lastname.slice(1)
+    firstname = firstname.charAt(0).toUpperCase() + firstslice.toLowerCase()
+    lastname = lastname.charAt(0).toUpperCase() + lastslice.toLowerCase()
 
 
     const response = await fetch("/addGuest",{
@@ -90,6 +91,7 @@ async function add(){
     if(response.ok){
         const message = document.getElementById('message');
         message.textContent = "Guest Added to the DNR Checklist"
+        message.style.color = "rgb(134, 202, 241)"
     }else{
         const message = document.getElementById('message');
         message.textContent = "Error Adding the Guest"
