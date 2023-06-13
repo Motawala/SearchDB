@@ -31,8 +31,11 @@ async function search(){
     var lastname = document.getElementById('lastname').value;
 
     //Converts the first character of the name to uppercase
-    firstname = firstname.charAt(0).toUpperCase() + firstname.slice(1)
-    lastname = lastname.charAt(0).toUpperCase() + lastname.slice(1)
+    var firstslice = firstname.slice(1)
+    var lastslice = lastname.slice(1)
+    firstname = firstname.charAt(0).toUpperCase() + firstslice.toLowerCase()
+    lastname = lastname.charAt(0).toUpperCase() + lastslice.toLowerCase()
+
 
     //Block sends a post req to the server to look for the name in the database
     try{
