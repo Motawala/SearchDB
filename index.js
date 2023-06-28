@@ -2,13 +2,12 @@ const express = require('express')
 const app = express();
 const { MongoClient, ServerApiVersion } = require('mongodb');
 const mongoose = require('mongoose')
-const router = express.Router();
 const consolidate = require('consolidate')
 const path = require('path')
 const bodyParser = require('body-parser')
 const cookieParser = require('cookie-parser')
 const indexRoutes = require('./routes/index')
-
+require('dotenv').config()
 
 app.use(express.static(path.join(__dirname, "public")))
 
@@ -17,7 +16,7 @@ app.engine('html', consolidate.swig)
 app.set('views', path.join(__dirname, './src'))
 app.set('view engine', 'html');
 
-app.listen(4000, () => console.log("server running on port 4000"))
+app.listen(process.env.PORT, () => console.log("server running on port 4000"))
 
 
 app.use(bodyParser.json())
@@ -29,7 +28,7 @@ app.use(bodyParser.urlencoded({extended: false}))
 
 
 //MongoDb Connect
-const uri = "mongodb+srv://karanp45:Kp2992002@project.viinysi.mongodb.net/user";
+const uri = process.env.URI;
 
 mongoose.connect(uri, {
     useNewUrlParser: true,

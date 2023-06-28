@@ -53,10 +53,10 @@ async function search(){
             const message = document.getElementById('message')
             if(data.firstname != undefined || data.lastname != undefined)
             {
-                message.textContent = "Guest Found in the DNR Checklist " + data.firstname + " " + data.lastname
+                message.textContent = "Found in the Checklist " + data.firstname + " " + data.lastname
                 message.style.color = "brown"
             }else{
-                message.textContent = "Guest Not Found"
+                message.textContent = "Not Found"
                 
             }
         })
@@ -93,7 +93,7 @@ async function add(){
 
     if(response.ok){
         const message = document.getElementById('message');
-        message.textContent = "Guest Added to the DNR Checklist"
+        message.textContent = "Added to the Checklist"
         message.style.color = "rgb(134, 202, 241)"
     }else{
         const message = document.getElementById('message');
